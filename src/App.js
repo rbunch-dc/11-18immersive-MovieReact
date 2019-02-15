@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import Poster from './Poster';
+import NavBar from './NavBar';
 
 class App extends Component {
   // in order to use "this" we have to have constructor
   constructor(){
     super();
     this.state = {
-      movieList: []
-	}
+    	  movieList: []
+		}
 	this.movieSearch = this.movieSearch.bind(this);
   }
 
@@ -62,16 +63,17 @@ class App extends Component {
 	  })
     return (
     	<div className="container">
-			<div className="row">
-				<h1>The movie app...again.</h1>
+				<NavBar />
+				<div className="row">
+					<h1>The movie app...again.</h1>
 
-				<form onSubmit={this.movieSearch}>
-					<input id="searchTerm" type="text" placeholder="Movie Title" />
-					<button type="submit" className="btn waves-effect btn-light">Search</button>
-				</form>
+					<form onSubmit={this.movieSearch}>
+						<input id="searchTerm" type="text" placeholder="Movie Title" />
+						<button type="submit" className="btn waves-effect btn-light">Search</button>
+					</form>
 
-				{posters}
-			</div>
+					{posters}
+				</div>
       	</div>
     );
   }
@@ -84,5 +86,16 @@ export default App;
 // 	// onSubmit handler passed
 // 	// call the function, that was passed
 // 	this.Component.props.onSubmit()
+// }
+
+// for(let i =0; i <5; i++){
+// 	for(let j =0;j <5; j++){	
+// 		if(j == 3){
+// 			break
+// 		}
+// 	}
+// 	if(i == 4){
+// 		break;
+// 	}
 // }
 
